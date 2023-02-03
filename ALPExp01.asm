@@ -1,9 +1,9 @@
 DATA SEGMENT
-    MSG DB 0DH, 0AH, "HELLO$"
+    MSG DB 0AH, 0DH, "hello suraj$"
     DATA ENDS
 
 CODE SEGMENT
-    ASSUME CS:CODE, DS:DATA
+    ASSUME CS: CODE, DS: DATA
     START:
         MOV AX, DATA
         MOV DS, AX
@@ -11,6 +11,7 @@ CODE SEGMENT
         LEA DX, MSG
         INT 21H
         MOV AH, 4CH
+        MOV AL, 00H
         INT 21H
     CODE ENDS
     END START
